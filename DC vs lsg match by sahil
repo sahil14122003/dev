@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Cricket Streaming</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        .live-stream {
+            width: 100%;
+            height: 500px;
+            border: none;
+            margin-top: 20px;
+        }
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .popup-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 400px;
+        }
+        .popup-content h2 {
+            margin-top: 0;
+        }
+        .popup-content a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .popup-content button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .popup-content button:hover {
+            background-color: #0056b3;
+        }
+        .hide {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Live Cricket Streaming</h1>
+    <p>Watch the live match below:</p>
+
+    <!-- Live Stream -->
+    <iframe id="live-stream" class="live-stream hide" src="https://insiderlive.pages.dev/Hindi1" allowfullscreen></iframe>
+
+    <!-- Pop-up -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <h2>Join Our Telegram Channel</h2>
+            <p>Get the latest updates directly on Telegram!</p>
+            <a href="https://t.me/anonymoussportss" target="_blank">Click here to join</a>
+            <br>
+            <button onclick="startStream()">Already Joined</button>
+        </div>
+    </div>
+
+    <script>
+        // Function to show the stream after the user confirms they've joined
+        function startStream() {
+            document.getElementById("popup").classList.add("hide");
+            document.getElementById("live-stream").classList.remove("hide");
+        }
+    </script>
+</body>
+</html>
